@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>WebAPIApp</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="loginForm.css" rel="stylesheet">
+    <link href="userInfo.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style>
+        body {
+            margin:10px;
+        }
+        
+        table {
+            table-layout: fixed;
+            width: 100%
+        }
+
+        td {
+            text-align: center;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        th {
+            text-align: center;
+            word-wrap: break-word;
+            word-break: break-all;
+            cursor:pointer;
+        }
+
+        thead{
+            cursor:pointer;
+        }
+
+        #wrapper {
+            width: 100%; /*Меняем на 80%900px*/
+            height:100%;
+            /*outline: 1px solid #787274;*/
+            padding: 10px;
+            /*margin: 0 auto;*/
+        }
+
+        #header {
+            height: 80px;
+            /*background: #25b33f;*/
+            margin-bottom: 15px;
+        }
+
+        #sidebar1 {
+            height: 80px;
+            /*background-color: #2ff553;*/
+            margin-bottom: 10px;
+            width: 20%; /*Меняем на 20%200px*/
+            float: left;
+        }
+
+        #sidebar2 {
+            height: 80px;
+            background-color: #2FF553;
+            margin-bottom: 10px;
+            width: 20%; /*Меняем на 20%200px*/
+            float: right;
+        }
+
+        #content {
+            height: 80%;
+            /*background: #9ef7af;*/
+            /*width: 59%;*/ /*Меняем на 59%480px*/
+            margin-bottom: 15px;
+        }
+
+        #footer {
+            height: /*80px*/10%;
+            /*background: #41874e;*/
+            margin-bottom: 10px;
+        }
+
+        #userInfo {
+            height: 30px;
+            /*margin-bottom: 10px;*/
+            width: 20%; /*Меняем на 20%200px*/
+           
+        }
+
+        #signOut {
+            height: 10%;
+            /*background-color: #2ff553;*/
+            width: 20%; /*Меняем на 20%200px*/
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <!-- Блок информации о пользователе -->
+            <div class="userInfo" style="display:none;">
+                <div class="userInfo-block">
+                    <!--<div class="form-group">-->
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <span class="userName  form-control"></span>
+                    </div>
+
+
+                    <!--</div>-->
+                </div>
+                <div id="signOut" class="input-group">
+                    <input type="button" value="Exit" id="logOut" class="btn btn-primary btn-block" />
+                </div>
+
+            </div>
+        </div>
+            <!--<div id="sidebar1"></div>
+        <div id="sidebar2"></div>-->
+            <div id="content">
+                <!-- Блок отправки сообщения -->
+                <div class="sendMessage">
+                    <form name="messageForm" action="#">
+                        <div class="form-group" style="width:60%;">
+                            <input type="hidden" name="id" value="0" />
+                            <label for="messagetext">Message text:</label>
+                            <textarea class="form-control" name="messagetext"></textarea>
+                        </div>
+                        <div class="panel-body">
+                            <button type="submit" class="btn btn-sm btn-primary">Send</button>
+                            <a id="reset" class="btn btn-sm btn-primary">Clear</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Таблица -->
+                <table id="table" class="table table-condensed table-striped table-bordered display" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th width="70px">Id</th>
+                            <th width="300px">Message</th>
+                            <th>Creation date and time</th>
+                            <th>Host Name</th>
+                            <th>Host IP</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="footer">
+                <!-- Форма авторизации -->
+                <div class="authorize">
+                    <a id="loginDivLink" href="javascript:void(0)">Sign in to see all messages</a>
+                    <div id="loginDivId" class="login-block" style="display:none;">
+                        <form class="loginForm" action="#">
+                            <h1>Авторизация</h1>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <!--<label>Enter name:</label>-->
+                                    <input type="text" id="Login" class="form-control" placeholder="Введите логин" style="width:200px" />
+                                </div>
+                            </div>
+                            <hr class="hr-xs">
+                            <!--<label>Enter password:</label><br />-->
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input type="password" id="passwordLogin" class="form-control" placeholder="Введите пароль" style="width:200px" />
+                                </div>
+                            </div>
+                            <input type="submit" id="submitLogin" value="Sign in" class="btn btn-primary btn-block" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+  </div>
+    
+
+    <!-- JS -->
+    <script type="text/javascript" src="_start.js"></script>
+    <script type="text/javascript" src="table.js"></script>
+    <script type="text/javascript" src="tableSort.js"></script>
+</body>
+</html>

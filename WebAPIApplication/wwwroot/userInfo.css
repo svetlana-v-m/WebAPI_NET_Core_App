@@ -1,0 +1,45 @@
+body {
+}
+.userInfo-block {
+    width: 300px;
+    background-color: #fff;
+    padding: 15px;
+    -webkit-box-shadow: 0 3px 50px 0 rgba(0,0,0,.1);
+    box-shadow: 0 3px 50px 0 rgba(0,0,0,.1);
+    text-align: center;
+    border-radius: 5px;
+    float: left;
+}
+
+.userInfo-block h1, .userInfo-block h6 {
+    font-family: Open Sans,sans-serif;
+    color: #96a2b2;
+    letter-spacing: 1px
+}
+
+.userInfo-block h1 {
+    font-size: 22px;
+    margin-bottom: 40px;
+    margin-top: 10px
+}
+
+    .userInfo-block .input-group-addon {
+        width: 10px;
+        color: #29aafe;
+        font-size: 17px;
+        opacity: .5
+    }
+
+    .userInfo-block .btn-block {
+        width: 20%;
+        margin-top:10%;
+        padding: 5px;
+        background: #29aafe;
+        border-color: #29aafe;
+    }
+
+
+.userInfo-block .hr-xs {
+    margin-top: 5px;
+    margin-bottom: 5px
+}

@@ -1,0 +1,40 @@
+﻿body {
+}
+.login-block {
+    width:300px;
+    background-color: #fff;
+    padding: 30px;
+    -webkit-box-shadow: 0 3px 50px 0 rgba(0,0,0,.1);
+    box-shadow: 0 3px 50px 0 rgba(0,0,0,.1);
+    text-align: center;
+    border-radius: 5px
+}
+
+    .login-block h1, .login-block h6 {
+        font-family: Open Sans,sans-serif;
+        color: #96a2b2;
+        letter-spacing: 1px
+    }
+
+    .login-block h1 {
+        font-size: 22px;
+        margin-bottom: 40px;
+        margin-top: 10px
+    }
+.login-block .input-group-addon {
+    color: #29aafe;
+    font-size: 17px;
+    opacity: .5
+}
+
+.login-block .btn-block {
+    margin-top: 15px;
+    padding: 15px;
+    background: #29aafe;
+    border-color: #29aafe;
+}
+
+.login-block .hr-xs {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
