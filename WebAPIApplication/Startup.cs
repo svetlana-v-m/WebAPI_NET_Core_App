@@ -22,8 +22,7 @@ namespace WebAPIApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string con = "Data Source=[domainName];Initial Catalog=[CatalogName];User ID=[User];Password=[Password]";
-            services.AddDbContext<Context>(options => options.UseSqlServer(con));
+            services.AddDbContext<Context>(options => options.UseInMemoryDatabase("MessagesDB"));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>
                     {
