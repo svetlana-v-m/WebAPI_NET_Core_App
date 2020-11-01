@@ -14,53 +14,62 @@
  
  + Html
  + CSS
- + Bootstrap.  
+ + Bootstrap.
+ 
+## API description 
+[TOC]
+### Get all messages on server
 
-# API description 
-
-## Get all messages on server
 GET/api/Messages
+
 Get all messages from server.
-### Request example
+#### Request example
 curl --request GET \
+
      --url 'https://[appdomain]/api/Messages'
 
-### Responce example
+#### Responce example
 [{"id":1,"text":"TestMessage1","creationDate":"01.11.2020 11:26:12","hostName":"myHost","hostIP":"192.168.1.10"},
 {"id":2,"text":"TestMessage2","creationDate":"01.11.2020 11:35:20","hostName":"myHost","hostIP":"192.168.1.10"}]
 
-## Get message by Id
+### Get message by Id
 GET/api/Messages/{id}
+
 GET message from server by its Id.
 
-### Parameters
-#### {id}
+#### Parameters
+##### {id}
 Message Id in data base.
+
 Type - integer.
 
-### Request example
+#### Request example
 curl --request GET \
+
      --url 'https://[appdomain]/api/Messages/1
      
-### Responce example
+#### Responce example
 If message is found - status 200 (Ok).
+
 [{"id":1,"text":"TestMessage1","creationDate":"01.11.2020 11:26:12","hostName":"myHost","hostIP":"192.168.1.10"}]
 
 If message is not found - status 404 (Not found).
 
-## Create new message
+### Create new message
 POST/api/Messages?={someMessage}
+
 Send new message to data base.
 
-### Parameters
-#### {someMessage}
+#### Parameters
+##### {someMessage}
 Message text. Type - string.
 
-### Request example
+#### Request example
 curl --request POST \
+
      --url 'https://[appdomain]/api/Messages?=MessageText
 
-### Responce example
+#### Responce example
 If message created successfully - status 200(Ok):
 {
     "id": 3,
@@ -70,14 +79,17 @@ If message created successfully - status 200(Ok):
     "hostIP": "192.168.1.10"
 }
 
-## Delete message
+### Delete message
 DELETE/api/Messages/{id}
+
 Delete message by its id.
 
-### Request example
+#### Request example
 curl --request DELETE \
+
      --url 'https://[appdomain]/api/Messages/3
 
-### Responce example
+#### Responce example
 If message deleted successfully status - 200 (OK).
+
 If message is not found - status 404 (Not found).
