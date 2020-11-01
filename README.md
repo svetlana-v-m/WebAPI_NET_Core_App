@@ -50,6 +50,7 @@ Console.WriteLine(response.Content);
 
 ### Get message by Id
 GET/api/Messages/{id}
+
 GET message from server by its Id.
 
 #### Parameters
