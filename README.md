@@ -16,21 +16,68 @@
  + CSS
  + Bootstrap.  
 
-# REST API 
+# API description 
 
 ## Get all messages on server
-GET/api/messages
+GET/api/Messages
 Get all messages from server.
-### Example
+### Request example
 curl --request GET \
-  --url 'https://[appdomain]/api/messages'
-  --header 'Accept: application/json'
-  
-### Responces
-200
-***
-Success
+     --url 'https://[appdomain]/api/Messages'
 
-Content Type      | Value
-:----------------:|:----------------:
-application/json  |Array<Message>
+### Responce example
+[{"id":1,"text":"TestMessage1","creationDate":"01.11.2020 11:26:12","hostName":"myHost","hostIP":"192.168.1.10"},
+{"id":2,"text":"TestMessage2","creationDate":"01.11.2020 11:35:20","hostName":"myHost","hostIP":"192.168.1.10"}]
+
+## Get message by Id
+GET/api/Messages/{id}
+GET message from server by its Id.
+
+### Parameters
+#### {id}
+Message Id in data base.
+Type - integer.
+
+### Request example
+curl --request GET \
+     --url 'https://[appdomain]/api/Messages/1
+     
+### Responce example
+If message is found - status 200 (Ok).
+[{"id":1,"text":"TestMessage1","creationDate":"01.11.2020 11:26:12","hostName":"myHost","hostIP":"192.168.1.10"}]
+
+If message is not found - status 404 (Not found).
+
+## Create new message
+POST/api/Messages?={someMessage}
+Send new message to data base.
+
+### Parameters
+#### {someMessage}
+Message text. Type - string.
+
+### Request example
+curl --request POST \
+     --url 'https://[appdomain]/api/Messages?=MessageText
+
+### Responce example
+If message created successfully - status 200(Ok):
+{
+    "id": 3,
+    "text": "MessageText",
+    "creationDate": "01.11.2020 14:50:15",
+    "hostName": "myHost",
+    "hostIP": "192.168.1.10"
+}
+
+## Delete message
+DELETE/api/Messages/{id}
+Delete message by its id.
+
+### Request example
+curl --request DELETE \
+     --url 'https://[appdomain]/api/Messages/3
+
+### Responce example
+If message deleted successfully status - 200 (OK).
+If message is not found - status 404 (Not found).
