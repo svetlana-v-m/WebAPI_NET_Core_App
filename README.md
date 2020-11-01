@@ -16,7 +16,7 @@
  + CSS
  + Bootstrap.
  
-## API description 
+## API description
 
 ### Get all messages on server
 
