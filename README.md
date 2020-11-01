@@ -162,8 +162,8 @@ curl --location --request PUT 'https://localhost:44350/api/Messages/1' \
         "id": 1,
         "text": "Changed Message Text",
         "creationDate": "01.11.2020 12:35:19",
-        "hostName": "tosha",
-        "hostIP": "192.168.1.109"
+        "hostName": "myHost",
+        "hostIP": "192.168.1.10"
     }'
 ##### HTTP
 PUT /api/Messages/1 HTTP/1.1
@@ -176,8 +176,8 @@ Content-Type: application/json
         "id": 1,
         "text": "Changed Message Text",
         "creationDate": "01.11.2020 12:35:19",
-        "hostName": "tosha",
-        "hostIP": "192.168.1.109"
+        "hostName": "myHost",
+        "hostIP": "192.168.1.10"
     }
     
 ##### C#
@@ -189,7 +189,7 @@ var request = new RestRequest(Method.PUT);
 
 request.AddHeader("Content-Type", "application/json");
 
-request.AddParameter("application/json", "{\r\n        \"id\": 1,\r\n        \"text\": \"Changed Message Text\",\r\n        \"creationDate\": \"01.11.2020 12:35:19\",\r\n        \"hostName\": \"tosha\",\r\n        \"hostIP\": \"192.168.1.109\"\r\n    }",  ParameterType.RequestBody);
+request.AddParameter("application/json", "{\r\n        \"id\": 1,\r\n        \"text\": \"Changed Message Text\",\r\n        \"creationDate\": \"01.11.2020 12:35:19\",\r\n        \"hostName\": \"myHost\",\r\n        \"hostIP\": \"192.168.1.10\"\r\n    }",  ParameterType.RequestBody);
 
 IRestResponse response = client.Execute(request);
 
