@@ -29,13 +29,6 @@ namespace WebAPIApplication.Controllers
             }
         }
 
-        public string IdSort { get; set; }
-        public string DateTimeSort { get; set; }
-        public string HostNameSort { get; set; }
-        public string HostIPSort { get; set; }
-        public string CurrestSort { get; set; }
-        public string CurrentFilter { get; set; }
-
         // GET: api/Messages
         [HttpGet]
         public IEnumerable<Message> GetMessages()
