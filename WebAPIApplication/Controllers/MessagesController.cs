@@ -37,51 +37,13 @@ namespace WebAPIApplication.Controllers
         public string CurrentFilter { get; set; }
 
         // GET: api/Messages
-        [Authorize]
         [HttpGet]
-        public IEnumerable<Message> GetMessages(/*string sortOrder*/)
+        public IEnumerable<Message> GetMessages()
         {
-            //IdSort = string.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
-            //DateTimeSort = sortOrder == "DateTime" ? "datetime_desc" : "DateTime";
-            //HostNameSort = sortOrder == "HostName" ? "hostname_desc" : "HostName";
-            //HostIPSort = sortOrder == "HostIP" ? "hostip_desc" : "HostIP";
-
-            //IQueryable<Message> messages = from m in _context.Messages
-            //                                select m;
-            //switch (sortOrder)
-            //{
-            //    case "id_desc":
-            //        messages = messages.OrderByDescending(m => m.Id);
-            //        break;
-            //    case "DateTime":
-            //        messages = messages.OrderBy(m => m.CreationDate);
-            //        break;
-            //    case "datetime_desc":
-            //        messages = messages.OrderByDescending(m => m.CreationDate);
-            //        break;
-            //    case "HostName":
-            //        messages = messages.OrderBy(m => m.HostName);
-            //        break;
-            //    case "hostname_desc":
-            //        messages = messages.OrderByDescending(m => m.HostName);
-            //        break;
-            //    case "HostIP":
-            //        messages = messages.OrderBy(m => m.HostIP);
-            //        break;
-            //    case "hostip_desc":
-            //        messages = messages.OrderByDescending(m => m.HostIP);
-            //        break;
-            //    default:
-            //        messages = messages.OrderBy(m => m.Id);
-            //        break;
-            //}
-
-            //await messages.AsNoTracking().ToListAsync();
-            return  _context.Messages.ToList();
+             return  _context.Messages.ToList();
         }
 
         // GET: api/Messages/5
-        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMessage([FromRoute] int id)
         {
@@ -101,7 +63,6 @@ namespace WebAPIApplication.Controllers
         }
 
         // PUT: api/Messages/5
-        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMessage([FromRoute] int id, [FromBody] Message message)
         {
@@ -137,7 +98,6 @@ namespace WebAPIApplication.Controllers
         }
 
         // POST: api/Messages
-        
         [HttpPost]
         public async Task<IActionResult> PostMessage([FromBody] Message message)
         {
@@ -153,7 +113,6 @@ namespace WebAPIApplication.Controllers
         }
 
         // DELETE: api/Messages/5
-        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMessage([FromRoute] int id)
         {
