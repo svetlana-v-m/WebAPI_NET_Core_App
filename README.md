@@ -17,7 +17,7 @@
  + Bootstrap.
  
 ## API description 
-[TOC]
+
 ### Get all messages on server
 
 GET/api/Messages
