@@ -15,3 +15,22 @@
  + Html
  + CSS
  + Bootstrap.  
+
+# REST API 
+
+## Get all messages on server
+GET/api/messages
+Get all messages from server.
+### Example
+curl --request GET \
+  --url 'https://[appdomain]/api/messages'
+  --header 'Accept: application/json'
+  
+### Responces
+200
+***
+Success
+
+Content Type      | Value
+:----------------:|:----------------:
+application/json  |Array<Message>
